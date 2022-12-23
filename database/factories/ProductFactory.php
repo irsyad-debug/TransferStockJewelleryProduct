@@ -16,8 +16,12 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $jewellery = $this->faker->randomElement(['Earrings', 'Engagement Ring', 'Necklaces', 'Locket', 'Pendant', 'Bracelet']);
+
         return [
-            //
+            'name' => $jewellery,
+            'description' => $this->faker->sentence,
+            'quantity_in_stock' => $this->faker->numberBetween('0', '100'),
         ];
     }
 }
